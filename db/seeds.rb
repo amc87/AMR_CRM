@@ -8,6 +8,7 @@
 
 Cliente.destroy_all
 Idioma.destroy_all
+User.destroy_all
 
 100.times do |index|
   Cliente.create!(name: Faker::Name.first_name,
