@@ -35,3 +35,8 @@ end
                 asesor: "test",
                 asesor_id: Faker::Number.number(2))
 end
+
+User.create!(
+    name: "Test",
+    email:"test@test.com",
+    password:"12345678")
