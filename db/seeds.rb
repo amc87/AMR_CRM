@@ -10,32 +10,32 @@ Cliente.destroy_all
 Idioma.destroy_all
 User.destroy_all
 
-100.times do |index|
-  Cliente.create!(name: Faker::Name.first_name,
-                apellidos: Faker::Name.last_name,
-                description: Faker::Lorem.paragraph,
-                nif: Faker::Number.number(10),
-                address: Faker::Address.street_address,
-                city: Faker::Address.city,
-                telephone: Faker::Number.number(10),
-                email: Faker::Internet.free_email)
-end
+# 100.times do |index|
+#   Cliente.create!(name: Faker::Name.first_name,
+#                 apellidos: Faker::Name.last_name,
+#                 description: Faker::Lorem.paragraph,
+#                 nif: Faker::Number.number(10),
+#                 address: Faker::Address.street_address,
+#                 city: Faker::Address.city,
+#                 telephone: Faker::Number.number(10),
+#                 email: Faker::Internet.free_email)
+# end
 
-10.times do |index|
-  Idioma.create!()
+# 10.times do |index|
+#   Idioma.create!()
 
-    end
+#     end
 
-100.times do |index|
-  Propietario.create!(name: Faker::Name.first_name,
-                apellidos: Faker::Name.last_name,
-                nif: Faker::Number.number(10),
-                telephone: Faker::Number.number(10),
-                telephone2: Faker::Number.number(10),
-                email: Faker::Internet.free_email,
-                asesor: "test",
-                asesor_id: Faker::Number.number(2))
-end
+# 100.times do |index|
+#   Propietario.create!(name: Faker::Name.first_name,
+#                 apellidos: Faker::Name.last_name,
+#                 nif: Faker::Number.number(10),
+#                 telephone: Faker::Number.number(10),
+#                 telephone2: Faker::Number.number(10),
+#                 email: Faker::Internet.free_email,
+#                 asesor: "test",
+#                 asesor_id: Faker::Number.number(2))
+# end
 
 User.create!(
     name: "Test",
