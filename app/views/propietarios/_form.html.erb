@@ -1,0 +1,58 @@
+<div class="container">
+
+  <%= form_for(@propietario) do |f| %>
+    <% if @propietario.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@propietario.errors.count, "error") %> prohibited this propietario from being saved:</h2>
+
+        <ul>
+        <% @propietario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name, "Nombre" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :apellidos, "Apellidos" %><br>
+      <%= f.text_field :apellidos, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :nif, "NIF" %><br>
+      <%= f.text_field :nif, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "E-mail" %><br>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :telephone, "Teléfono" %><br>
+      <%= f.text_field :telephone, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :telephone2 %><br>
+      <%= f.text_field :telephone2, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :asesor, "Asesor" %><br>
+      <%= f.text_field :asesor, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :asesor_id, "ID Asesor" %><br>
+      <%= f.text_field :asesor_id, class: "form-control" %>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Atrás', propietarios_path, class:"btn btn-primary-outline" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

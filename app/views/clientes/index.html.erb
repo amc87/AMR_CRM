@@ -1,0 +1,45 @@
+
+<h1>Listado de Clientes</h1>
+<%= link_to "Nuevo Cliente +", new_cliente_path, class: "btn btn-primary amc-button-margin" %>
+<br>
+
+<div class="table-responsive">
+
+  <table class="table table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Nombre</th>
+        <th>Apelidos</th>
+        <th>Descripción</th>
+        <th>NIF</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>Teléfono</th>
+        <th>E-mail</th>
+        <th class="amc_centrar" colspan="3">Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @clientes.each do |cliente| %>
+        <tr>
+          <td><%= link_to cliente.name, cliente_path(cliente) %></td>
+          <td><%= link_to cliente.apellidos, cliente_path(cliente) %></td>
+          <td><%= cliente.description %></td>
+          <td><%= cliente.nif %></td>
+          <td><%= cliente.address %></td>
+          <td><%= cliente.city %></td>
+          <td><%= cliente.telephone %></td>
+          <td><%= cliente.email %></td>
+          <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+          <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>  <!-- End of table-responsive -->
+
+<br>
+
+<%= link_to "Nuevo Cliente +", new_cliente_path, class: "btn btn-primary", id: "my-id" %>

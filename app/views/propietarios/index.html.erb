@@ -1,0 +1,45 @@
+
+<h1>Listado de Propietarios</h1>
+<%= link_to "Nuevo Propietario +", new_propietario_path, class: "btn btn-primary amc-button-margin" %>
+<br>
+
+<div class="table-responsive">
+
+  <table class="table table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Name</th>
+        <th>Apellidos</th>
+        <th>Nif</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Telephone2</th>
+        <th>Asesor</th>
+        <th>Asesor</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @propietarios.each do |propietario| %>
+        <tr>
+          <td><%= link_to propietario.name, propietario_path(propietario) %></td>
+          <td><%= link_to propietario.apellidos, propietario_path(propietario) %></td>
+          <td><%= propietario.nif %></td>
+          <td><%= propietario.email %></td>
+          <td><%= propietario.telephone %></td>
+          <td><%= propietario.telephone2 %></td>
+          <td><%= propietario.asesor %></td>
+          <td><%= propietario.asesor_id %></td>
+          <td><%= link_to 'Editar', edit_propietario_path(propietario) %></td>
+          <td><%= link_to 'Eliminar', propietario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div> <!-- End of table-responsive -->
+
+<br>
+
+<%= link_to "Nuevo Propietario +", new_propietario_path, class: "btn btn-primary", id: "my-id" %>

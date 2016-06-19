@@ -1,0 +1,58 @@
+<div class="container">
+
+  <%= form_for(@cliente) do |f| %>
+    <% if @cliente.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+        <ul>
+        <% @cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name, "Nombre" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :apellidos, "Apellidos" %><br>
+      <%= f.text_field :apellidos, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, "Descripción" %><br>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :nif, "NIF" %><br>
+      <%= f.text_field :nif, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, "Dirección" %><br>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :city, "Ciudad" %><br>
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :telephone, "Teléfono" %><br>
+      <%= f.number_field :telephone, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "E-mail" %><br>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Atrás', clientes_path, class:"btn btn-primary-outline" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
