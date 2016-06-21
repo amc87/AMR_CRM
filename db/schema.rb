@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619110321) do
+ActiveRecord::Schema.define(version: 20160621175221) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,28 @@ ActiveRecord::Schema.define(version: 20160619110321) do
   end
 
   add_index "idiomas", ["cliente_id"], name: "index_idiomas_on_cliente_id"
+
+  create_table "propiedads", force: :cascade do |t|
+    t.string   "tipo_operacion"
+    t.string   "tipo_inmueble"
+    t.string   "titulo"
+    t.string   "subtitulo"
+    t.text     "descripcion"
+    t.string   "localizacion"
+    t.string   "distrito"
+    t.string   "direccion"
+    t.string   "cod_postal"
+    t.decimal  "precio_desde"
+    t.decimal  "precio_hasta"
+    t.decimal  "superficie_desde"
+    t.decimal  "superficie_hasta"
+    t.string   "estado"
+    t.string   "ubicacion"
+    t.integer  "dormitorios"
+    t.integer  "banos"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "propietarios", force: :cascade do |t|
     t.string   "name"

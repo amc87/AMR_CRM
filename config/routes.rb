@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :propiedads
   devise_for :users
   resources :propietarios
   resources :idiomas

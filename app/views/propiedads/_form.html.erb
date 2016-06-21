@@ -1,0 +1,89 @@
+<%= form_for(@propiedad) do |f| %>
+  <% if @propiedad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@propiedad.errors.count, "error") %> prohibited this propiedad from being saved:</h2>
+
+      <ul>
+      <% @propiedad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_operacion %><br>
+    <%= f.text_field :tipo_operacion %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_inmueble %><br>
+    <%= f.text_field :tipo_inmueble %>
+  </div>
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitulo %><br>
+    <%= f.text_field :subtitulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :localizacion %><br>
+    <%= f.text_field :localizacion %>
+  </div>
+  <div class="field">
+    <%= f.label :distrito %><br>
+    <%= f.text_field :distrito %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :cod_postal %><br>
+    <%= f.text_field :cod_postal %>
+  </div>
+  <div class="field">
+    <%= f.label :precio_desde %><br>
+    <%= f.text_field :precio_desde %>
+  </div>
+  <div class="field">
+    <%= f.label :precio_hasta %><br>
+    <%= f.text_field :precio_hasta %>
+  </div>
+  <div class="field">
+    <%= f.label :superficie_desde %><br>
+    <%= f.text_field :superficie_desde %>
+  </div>
+  <div class="field">
+    <%= f.label :superficie_hasta %><br>
+    <%= f.text_field :superficie_hasta %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :ubicacion %><br>
+    <%= f.text_field :ubicacion %>
+  </div>
+  <div class="field">
+    <%= f.label :distrito %><br>
+    <%= f.text_field :distrito %>
+  </div>
+  <div class="field">
+    <%= f.label :dormitorios %><br>
+    <%= f.number_field :dormitorios %>
+  </div>
+  <div class="field">
+    <%= f.label :banos %><br>
+    <%= f.number_field :banos %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
